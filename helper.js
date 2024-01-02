@@ -116,11 +116,11 @@ const displayMovie = (movieInfo) => {
         newLikedMovieDiv.appendChild(titleHeader);
 
         const likedMovieContainer = document.getElementById('liked-movies-container');
+        console.log(likedMovieContainer.childElementCount);
         likedMovieContainer.appendChild(newLikedMovieDiv);
 
-        likeMovie();  // Call likeMovie function
-        anotherFunction();  // Call anotherFunction
+        likeMovie();
     });
-    
+
     dislikeBtn.onclick = dislikeMovie;
 };
