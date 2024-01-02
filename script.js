@@ -66,9 +66,11 @@ const showRandomMovie = async () => {
   const movies = await getMovies();
   const randomMovie = getRandomMovie(movies);
   const info = await getMovieInfo(randomMovie);
+  console.log("XXX");
   displayMovie(info); // Finally displaying new movie info to screen
 };
 
+console.log("YYY");
 getGenres().then(populateGenreDropdown); // Sending promise result to populateGenreDropdown function to create all genres
 playBtn.onclick = showRandomMovie; // Assigning reference to function instead of the function return result
 // So that when the user clicks the let's play button the show random movie function runs
