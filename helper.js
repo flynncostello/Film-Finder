@@ -73,10 +73,10 @@ const createMovieOverview = (overview) => {
 };
 
 // Create HTML for movie release date
-const createMovieReleaseDate = (releaseDate) => {
+const createMovieReleaseDate = (releaseDateText) => {
     const releaseDate = document.createElement('h2');
     releaseDate.setAttribute('id', 'movieReleaseDate');
-    releaseDate.innerHTML = releaseDate;
+    releaseDate.innerHTML = releaseDateText;
   
     return releaseDate;
 };
@@ -106,7 +106,7 @@ const displayMovie = (movieInfo) => {
     moviePosterDiv.appendChild(moviePoster);
     movieTextDiv.appendChild(titleHeader);
     movieTextDiv.appendChild(overviewText);
-    moviePosterDiv.appendChild(releaseDateText);
+    movieTextDiv.appendChild(releaseDateText);
   
     showBtns();
     likeBtn.onclick = likeMovie;
