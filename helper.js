@@ -140,6 +140,7 @@ const displayMovie = (movieInfo) => {
         likedMovieContainer.appendChild(newLikedMovieDiv);
     });
     
+    
     likeBtn.onclick = likeMovie;
     dislikeBtn.onclick = dislikeMovie;
 };
