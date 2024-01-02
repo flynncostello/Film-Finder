@@ -66,7 +66,7 @@ const showRandomMovie = async () => {
   const movies = await getMovies();
   const randomMovie = getRandomMovie(movies);
   const info = await getMovieInfo(randomMovie);
-  console.log("XXX");
+  console.log(info);
   displayMovie(info); // Finally displaying new movie info to screen
 };
 
