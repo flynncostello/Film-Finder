@@ -98,14 +98,30 @@ select {
 
 #liked-movies-container {
     display: inline-flex;
+    gap: 15px;
+    flex-wrap: wrap;
     width: 100%;
 }
 
 #liked-movies-container#liked-movie {
-    max-width: 100px;
     height: auto;
+    max-width: 2%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: center;
+}
+
+img#likedMoviePoster {
+    width:  50px;
+    height:  auto;
+    display:  block;
+    margin:  auto;
+}
+
+h2#likedMovieTitle {
+    font-family: 'Questrial';
+    color: #FEFBEA;
+    line-height: 1.25;
+    font-size: 15px;
 }

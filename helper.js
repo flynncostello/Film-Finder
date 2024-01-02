@@ -43,6 +43,24 @@ const dislikeMovie = () => {
     showRandomMovie();
 };
 
+const createLikedMoviePoster = (posterPath) => {
+    const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
+
+    const posterImg = document.createElement('img');
+    posterImg.setAttribute('src', moviePosterUrl);
+    posterImg.setAttribute('id', 'likedMoviePoster');
+  
+    return posterImg;
+};
+
+const createLikedMovieTitle = (title) => {
+    const titleHeader = document.createElement('h2');
+    titleHeader.setAttribute('id', 'likedMovieTitle');
+    titleHeader.innerHTML = title;
+  
+    return titleHeader;
+};
+
 // Create HTML for movie poster
 const createMoviePoster = (posterPath) => {
     const moviePosterUrl = `https://image.tmdb.org/t/p/original/${posterPath}`;
@@ -109,18 +127,19 @@ const displayMovie = (movieInfo) => {
     movieTextDiv.appendChild(releaseDateText);
   
     showBtns();
+    
     likeBtn.addEventListener('click', () => {
         const newLikedMovieDiv = document.createElement('div');
         newLikedMovieDiv.setAttribute('id', 'liked-movie');
-        newLikedMovieDiv.appendChild(moviePoster);
-        newLikedMovieDiv.appendChild(titleHeader);
+        const likedMoviePoster = createLikedMoviePoster(movieInfo.poster_path);
+        const likedMovieTitle = createLikedMovieTitle(movieInfo.title);
+        newLikedMovieDiv.appendChild(likedMoviePoster);
+        newLikedMovieDiv.appendChild(likedMovieTitle);
 
         const likedMovieContainer = document.getElementById('liked-movies-container');
-        console.log(likedMovieContainer.childElementCount);
         likedMovieContainer.appendChild(newLikedMovieDiv);
-
     });
-
+    
     likeBtn.onclick = likeMovie;
     dislikeBtn.onclick = dislikeMovie;
 };
