@@ -97,26 +97,30 @@ select {
 }
 
 #liked-movies-container {
-    display: inline-flex;
+    display: flex;
     gap: 15px;
     flex-wrap: wrap;
     width: 100%;
 }
 
-#liked-movies-container#liked-movie {
+#liked-movie {
     height: auto;
-    max-width: 2%;
+    max-width: 48%; /* Adjust as needed */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-self: center;
+    background-color: #2b2b2b; /* Add background color for better visibility */
+    padding: 10px; /* Add padding for better spacing */
+    border-radius: 10px; /* Add border-radius for rounded corners */
 }
 
 img#likedMoviePoster {
-    width:  50px;
-    height:  auto;
-    display:  block;
-    margin:  auto;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    border-radius: 5px; /* Add border-radius for rounded corners */
 }
 
 h2#likedMovieTitle {
@@ -124,4 +128,5 @@ h2#likedMovieTitle {
     color: #FEFBEA;
     line-height: 1.25;
     font-size: 15px;
+    margin-top: 10px; /* Add margin for better spacing */
 }
