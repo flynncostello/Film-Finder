@@ -110,6 +110,7 @@ const displayMovie = (movieInfo) => {
   
     showBtns();
     likeBtn.addEventListener('click', () => {
+        likeMovie();
         const newLikedMovieDiv = document.createElement('div');
         newLikedMovieDiv.setAttribute('id', 'liked-movie');
         newLikedMovieDiv.appendChild(moviePoster);
@@ -119,7 +120,6 @@ const displayMovie = (movieInfo) => {
         console.log(likedMovieContainer.childElementCount);
         likedMovieContainer.appendChild(newLikedMovieDiv);
 
-        likeMovie();
     });
 
     dislikeBtn.onclick = dislikeMovie;
