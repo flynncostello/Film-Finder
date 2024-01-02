@@ -1,5 +1,3 @@
-let liked_movies = [];
-
 // Populate dropdown menu with all the available genres
 const populateGenreDropdown = (genres) => {
     const select = document.getElementById('genres')
@@ -35,7 +33,6 @@ const clearCurrentMovie = () => {
 
 // After liking a movie, clears the current movie from the screen and gets another random movie
 const likeMovie = () => {
-    liked_movies.push
     clearCurrentMovie();
     showRandomMovie();
 };
@@ -112,16 +109,18 @@ const displayMovie = (movieInfo) => {
     movieTextDiv.appendChild(releaseDateText);
   
     showBtns();
-    likeBtn.onclick = () => {
+    likeBtn.addEventListener('click', () => {
         const newLikedMovieDiv = document.createElement('div');
         newLikedMovieDiv.setAttribute('id', 'liked-movie');
         newLikedMovieDiv.appendChild(moviePoster);
         newLikedMovieDiv.appendChild(titleHeader);
-        
+
         const likedMovieContainer = document.getElementById('liked-movies-container');
         likedMovieContainer.appendChild(newLikedMovieDiv);
-    }
+
+        likeMovie();  // Call likeMovie function
+        anotherFunction();  // Call anotherFunction
+    });
     
-    likeBtn.onclick = likeMovie;
     dislikeBtn.onclick = dislikeMovie;
 };
