@@ -95,3 +95,17 @@ select {
     background-color: #c74a4a;
     color: #910000;
 }
+
+#liked-movies-container {
+    display: inline-flex;
+    width: 100%;
+}
+
+#liked-movies-container#liked-movie {
+    max-width: 100px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+}
