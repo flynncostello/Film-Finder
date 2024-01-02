@@ -100,7 +100,7 @@ const displayMovie = (movieInfo) => {
     const moviePoster = createMoviePoster(movieInfo.poster_path);
     const titleHeader = createMovieTitle(movieInfo.title);
     const overviewText = createMovieOverview(movieInfo.overview);
-    const releaseDateText = createMovieReleaseDate(movieInfo.releaseDate);
+    const releaseDateText = createMovieReleaseDate(movieInfo.release_date);
   
     // Append title, poster, and overview to page
     moviePosterDiv.appendChild(moviePoster);
